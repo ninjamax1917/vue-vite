@@ -16,7 +16,7 @@ import IconsProfile from './icons/profile.vue';
                     <span class="span_subtittle">Горячая пицца</span>
                 </div>
                 <!-- КАРТИНКА-ЛОГО -->
-                <img class="w-20 h-20 -mx-1 mt-2" src="/public/images/logo/kapi.png" alt="Logo">
+                <img class="w-20 h-20 -mx-1 mt-2" src="/images/logo/kapi.png" alt="Logo">
                 <!--  -->
                 <div class="flex flex-col items-center">
                     <span class="span_tittle">pi<span class="zz span_tittle">zz</span class="span_tittle">a</span>

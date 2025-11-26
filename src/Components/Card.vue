@@ -9,19 +9,17 @@ defineProps({
     price: Number,
     isFavorite: Boolean,
     isAdded: Boolean,
+    onClickAdd: Function,
+    onClickFavorite: Function
 });
-
-const onClickAdd = () => {
-    alert(1);
-}
 </script>
 
 <template>
     <div>
         <div
             class="bg-white relative border border-gray-100 rounded-4xl p-8 cursor-pointer hover:-translate-y-2 duration-300 hover:shadow-xl">
-            <IconsLike class="text-red-400 absolute top-8 left-8" v-if="isFavorite" />
-            <IconsLike class="text-gray-300 absolute top-8 left-8" v-else />
+            <IconsLike class="text-red-400 absolute top-8 left-8" v-if="isFavorite" @click="onClickFavorite" />
+            <IconsLike class="text-gray-300 absolute top-8 left-8" v-else @click="onClickFavorite" />
             <img :src="imageUrl" alt="piccy">
             <p class="text-md mt-2">{{ tittle }}</p>
 
@@ -30,12 +28,13 @@ const onClickAdd = () => {
                     <span class="text-gray-500 text-sm">Цена: </span>
                     <b>{{ price }} ₽</b>
                 </div>
-                <div>
+                <div v-if="!isAdded">
                     <IconsPlus @click="onClickAdd" v-if="!isAdded" />
-                    <IconsCheck v-else />
+                </div>
+                <div v-else>
+                    <IconsCheck />
                 </div>
             </div>
-
         </div>
     </div>
 </template>
